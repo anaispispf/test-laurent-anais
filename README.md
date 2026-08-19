@@ -2,4 +2,4 @@
 Un premier projet en R
 
 
-Voici une première ebauche du projet
+Voici une première ébauche du projet
