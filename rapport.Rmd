@@ -1,0 +1,29 @@
+---
+title: "Rapport"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(data.table)
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+METADATA <- fread("output/metadonnees.csv")
+```
+
+```{r, results='asis'}
+for (i in seq_len(nrow(METADATA))) {
+  ligne <- METADATA[i]
+  cat("##", ligne$description, "\n\n")
+
+  if (ligne$type == "Table") {
+    cat(kable(fread(ligne$fichier), format = "markdown"), sep = "\n")
+  } else {
+    cat(sprintf("![%s](%s)\n", ligne$description, ligne$fichier))
+  }
+
+  cat("\n\n")
+}
+```
