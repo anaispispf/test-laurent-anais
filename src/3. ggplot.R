@@ -9,6 +9,7 @@ G1 <- ggplot(DATA, aes(x = sexe, fill = sexe)) +
   theme_minimal() +
   theme(legend.position = "none")
 ggsave("output/repartition_sexe.png", G1, width = 6, height = 5)
+ggsave("output/repartition_sexe.pdf", G1, width = 6, height = 5)
 
 G2 <- ggplot(DATA, aes(x = profession)) +
   geom_bar(fill = "steelblue") +
@@ -22,3 +23,4 @@ G2 <- ggplot(DATA, aes(x = profession)) +
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 ggsave("output/repartition_profession.png", G2, width = 8, height = 5)
+ggsave("output/repartition_profession.pdf", G2, width = 8, height = 5)

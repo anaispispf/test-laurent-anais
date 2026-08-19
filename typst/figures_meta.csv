@@ -1,0 +1,5 @@
+numero,type,nomimage,caption,sources
+1,figure,graphe1,Effectifs par sexe,ISPF - Enquête de fréquentation touristique (EFT)
+2,tab,tab1,Indicateurs mensuels,ISPF - Enquête de fréquentation touristique (EFT)
+3,tab,tab2,Nombre de touristes et durée moyenne de séjour,ISPF - Enquête de fréquentation touristique (EFT)
+4,figure,graphe2,"Effectifs par profession","Port Autonome de Papeete, ISPF - Enquête de fréquentation touristique (EFT)"
