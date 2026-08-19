@@ -1,5 +1,6 @@
 library(data.table)
 library(ini)
+library(ggplot2)
 
 # Nombre de personnes
 n <- 1000
