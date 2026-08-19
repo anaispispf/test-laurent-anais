@@ -1,5 +1,5 @@
 DATA <- fread("input/gens.csv")
-fwrite(DATA[, .N, profession], "output/tab1.csv")
+fwrite(DATA[, .N, sexe], "output/tab1.csv")
 
 DATA[sexe=="Femme" & profession=="Agriculteur"]
 DATA[profession %like% "gri"]
