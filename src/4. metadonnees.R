@@ -27,7 +27,7 @@ METADATA <- data.table(
   script_source = c(
     "src/2. analyse data.R",
     "src/3. ggplot.R",
-    "main.R",
+    "src/2. analyse data.R",
     "src/3. ggplot.R"
   )
 )
