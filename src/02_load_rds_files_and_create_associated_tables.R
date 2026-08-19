@@ -21,20 +21,9 @@ RessourceMenage[, RevenuMensuelUCoxford := RevenuMensuel/UCoxford]
 
 bornes <- wquantile(RessourceMenage$RevenuMensuelUC,RessourceMenage$PonderationMenage,probs=seq(0,1,0.2))
 bornes <- unique(bornes)
-
-RessourceMenage[, QuintileRevenu := cut(
-  RevenuMensuelUC,
-  breaks=bornes,
-  include.lowest=TRUE,
-  labels=paste0("Q", seq_len(length(bornes)-1))
-)]
+RessourceMenage[, QuintileRevenu := cut(RevenuMensuelUC, breaks=bornes, include.lowest=TRUE, labels=paste0("Q", seq_len(length(bornes)-1)))]
 
 
 # Ajout du niveau de vie aux dépenses
-DimDepense <- merge(
-  DimDepense,
-  RessourceMenage[, .(MenageID, RevenuMensuel, RevenuMensuelUC, RevenuMensuelUCoxford, QuintileRevenu)],
-  by="MenageID",
-  all.x=TRUE,
-  sort=FALSE
-)
+DimDepense <- merge(DimDepense, RessourceMenage[, .(MenageID, RevenuMensuel, RevenuMensuelUC, RevenuMensuelUCoxford, QuintileRevenu)],
+                    by="MenageID", all.x=TRUE,sort=FALSE)
